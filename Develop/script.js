@@ -1,19 +1,19 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-const upperCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+//const upperCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 //lowerCharacters;
-const lowerCharacters = "abcdefghijklmnopqrstuvwxyz";
-const specials = "*&^%$#@!";
+//const lowerCharacters = "abcdefghijklmnopqrstuvwxyz";
+//const specials = "*&^%$#@!";
 //specials;
-const digits = "0123456789";
+//const digits = "0123456789";
 //digits;
 
 function generatePassword() {
   var passwordLength;
   console.log(passwordLength);
   while (true) {
-    var input = prompt("Please input number of chracters for password:");
+    var input = prompt("Please input number of characters for password:");
 
     passwordLength = Number(input);
     if (
@@ -28,22 +28,30 @@ function generatePassword() {
   }
   let acceptInput = "";
 
-  var upps = confirm("Would you like to include UpperCase:");
-  if (upps === true) {
-    acceptInput += upperCharacters;
-  }
   var digits = confirm("Would you like to include Digits:");
   if (digits === true) {
-    acceptInput += digits;
+    acceptInput += "0123456789";
+  }
+  var upps = confirm("Would you like to include UpperCase:");
+  if (upps === true) {
+    acceptInput += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   }
   var lows = confirm("Would you like to include LowerCase:");
   if (lows === true) {
-    acceptInput += lowerCharacters;
+    acceptInput += "abcdefghijklmnopqrstuvwxyz";
   }
   var spec = confirm("Would you like to include SpecialCharacters:");
   if (spec === true) {
-    acceptInput += specials;
+    acceptInput += "*&^%$#@!";
   }
+  let genpass = "";
+
+  for (let i = 0; i < passwordLength; i++) {
+    var index = Math.floor(Math.random() * passwordLength);
+    var singlechar = acceptInput[index];
+    genpass += singlechar;
+  }
+  window.alert(genpass);
 }
 // Write password to the #password input
 
