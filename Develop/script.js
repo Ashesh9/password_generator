@@ -31,13 +31,16 @@ function generatePassword() {
   if (upps === true) {
     acceptInput += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   }
+  var spec = confirm("Would you like to include SpecialCharacters:");
+  if (spec === true) {
+    acceptInput += "(*&^%$#@!)";
+  }
   var lows = confirm("Would you like to include LowerCase:");
   if (lows === true) {
     acceptInput += "abcdefghijklmnopqrstuvwxyz";
   }
-  var spec = confirm("Would you like to include SpecialCharacters:");
-  if (spec === true) {
-    acceptInput += "*&^%$#@!";
+  if (passwordLength >= 72) {
+    acceptInput = acceptInput + acceptInput;
   }
   let genpass = "";
 
