@@ -2,19 +2,14 @@
 var generateBtn = document.querySelector("#generate");
 
 //const upperCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-//lowerCharacters;
 //const lowerCharacters = "abcdefghijklmnopqrstuvwxyz";
 //const specials = "*&^%$#@!";
-//specials;
 //const digits = "0123456789";
-//digits;
-
 function generatePassword() {
   var passwordLength;
   console.log(passwordLength);
   while (true) {
     var input = prompt("Please input number of characters for password:");
-
     passwordLength = Number(input);
     if (
       !isNaN(passwordLength) &&
@@ -47,18 +42,18 @@ function generatePassword() {
   let genpass = "";
 
   for (let i = 0; i < passwordLength; i++) {
-    var index = Math.floor(Math.random() * passwordLength);
-    var singlechar = acceptInput[index];
+    var char = Math.floor(Math.random() * passwordLength);
+    var singlechar = acceptInput[char];
     genpass += singlechar;
   }
   window.alert(genpass);
+  console.log(genpass);
 }
 // Write password to the #password input
 
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 }
 
