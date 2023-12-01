@@ -14,4 +14,5 @@ week 3 challenge
   - W3 school
   - Class Study Grp
  
-    
+ ### Output Images
+-Folder that demonstrates code is active
