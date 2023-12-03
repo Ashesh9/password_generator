@@ -45,12 +45,12 @@ function generatePassword() {
   let genpass = "";
 
   for (let i = 0; i < passwordLength; i++) {
-    var char = Math.floor(Math.random() * passwordLength);
+    var char = Math.floor(Math.random() * acceptInput.length);
+    console.log(char);
     var singlechar = acceptInput[char];
     genpass += singlechar;
   }
-  window.alert(genpass);
-  console.log(genpass);
+  return genpass;
 }
 // Write password to the #password input
 
